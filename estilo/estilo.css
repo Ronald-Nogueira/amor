@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    align-items: center;
+
+    height: 100vh;
+}
+
+
+.texto{
+    background: linear-gradient(45deg, #ee1010, #ee1053, #eb10a2, #d00ce2, #eb10a2, #ee1053, #ee1010);
+    background-size: 400% 100%;
+    animation: degrade 10s linear infinite alternate;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.texto h1{
+    color: white;
+    font-weight: 900;
+    font-size: 55px;
+}
+h3{
+    color: white;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 16px;
+
+}
+@keyframes degrade {
+    0%{
+        background-position-x: 0%;
+    }
+    100%{
+        background-position: 400%;
+    }
+    
+}
+
+.txt-animado{
+    font-weight: 200;
+
+
+}
+
+.txt-animado span{
+    position: relative;
+   
+    
+}
+span{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 16px;
+
+    
+}
+
+.txt-animado span::before{
+    content: "";
+    color: rgb(255, 255, 255);
+    animation: palavras 20s infinite  ;
+}
+.txt-animado span::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    border-left: 2px solid white;
+    right: -6px;
+    opacity: 1;
+    animation: cursor .8s infinite, digita 20s steps(15) infinite;
+    width: calc(100% + 7px);
+    background-color: #1a1a1a;
+
+}
+@keyframes digita {
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95%{
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% + 7px);
+    }
+}
+
+@keyframes cursor {
+    0%{
+        border-left: 2px solid #1a1a1a;
+    }
+}
+
+
+@keyframes palavras {
+    0%, 20%{
+        content: "Feito pelo seu namorado programador";
+    }
+    21%, 40%{
+        content: "Eu te amo <3";
+    }
+    41%, 60%{
+        content: "Feliz 1 ano de namoro";
+    }
+    61%, 80%{
+        content: "você é a melhor namorada do mundo";
+    }
+    81%, 100%{
+        content: "cade o nana?";
+    }
+
+}
